@@ -7,24 +7,24 @@ select sum(Salary) AS totalsalary
 from employees;
 
 -- 3
-select min(UnitPrice)
+select min(UnitPrice) as cheapestprice
 from products;
 
 -- 4
-select avg(UnitPrice)
+select avg(UnitPrice) as averageprice
 from products;
 
 -- 5
-select max(UnitPrice)
+select max(UnitPrice) as highestprice
 from products;
 
 -- 6
-select SupplierID, count(*)
+select SupplierID, count(*) as itemcount
 From products
 group by SupplierID;
 
 -- 7
-select CategoryID, avg(UnitPrice)
+select CategoryID, avg(UnitPrice) AS averageprice
 From products
 group by CategoryID;
 
@@ -37,4 +37,4 @@ having count(*) >= 5;
 -- 9
 select ProductID, ProductName, UnitPrice*UnitsInStock AS inventoryvalue
 from products
-Order by inventoryvalue  DESC, ProductName;
+Order by inventoryvalue  DESC, ProductName ASC;
